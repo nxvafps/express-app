@@ -1,8 +1,8 @@
-const express = require("express");
-const projectRoutes = require("./projects");
+import { Router } from "express";
+import projectRoutes from "./projects";
 
-const router = express.Router();
+const router = Router();
 
 router.use("/projects", projectRoutes);
 
-module.exports = router;
+export default router;

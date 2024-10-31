@@ -1,12 +1,12 @@
-const express = require("express");
-const pool = require("../config/db");
+import { Router } from "express";
+import { query } from "../config/db";
 
-const router = express.Router();
+const router = Router();
 
 // Get all projects
 router.get("/", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM public.projects");
+    const result = await query("SELECT * FROM public.projects");
     res.json(result.rows);
   } catch (err) {
     console.error(err);
@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 // Get all projects where current_project = 'y'
 router.get("/current", async (req, res) => {
   try {
-    const result = await pool.query(
+    const result = await query(
       "SELECT * FROM public.projects WHERE current_project = 'y'"
     );
     res.json(result.rows);
@@ -27,4 +27,4 @@ router.get("/current", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,9 +1,9 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const setupMiddlewares = require("./middlewares");
-const routes = require("./routes");
+import express from "express";
+import { config } from "dotenv";
+import setupMiddlewares from "./middlewares";
+import routes from "./routes";
 
-dotenv.config();
+config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -19,4 +19,4 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-module.exports = app;
+export default app;

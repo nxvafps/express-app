@@ -1,6 +1,6 @@
-const express = require("express");
+import { json, urlencoded } from "express";
 
-module.exports = (app) => {
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: true }));
+export default (app) => {
+  app.use(json());
+  app.use(urlencoded({ extended: true }));
 };
