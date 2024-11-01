@@ -1,20 +1,16 @@
 import express from "express";
-import { config } from "dotenv";
-import setupMiddlewares from "./middlewares";
-import routes from "./routes";
-
-config();
+import projectsRouter from "./routes/projects.js";
+import setupMiddlewares from "./middlewares/index.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Setup middlewares
+//middlewares
 setupMiddlewares(app);
+//routes
+app.use("/api/projects", projectsRouter);
 
-// Setup routes
-app.use("/", routes);
-
-// Start the server
+//start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
