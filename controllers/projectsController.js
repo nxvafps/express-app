@@ -5,8 +5,8 @@ export const getProjects = async (req, res) => {
     const result = await pool.query("SELECT * FROM public.projects");
     res.json(result.rows);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server Error" });
+    console.error("Error fetching projects", err);
+    res.status(500).json({ error: "Server Error", details: err.message });
   }
 };
 
@@ -17,7 +17,7 @@ export const getCurrentProjects = async (req, res) => {
     );
     res.json(result.rows);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server Error" });
+    console.error("Error fetching projects", err);
+    res.status(500).json({ error: "Server Error", details: err.message });
   }
 };
