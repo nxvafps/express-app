@@ -6,5 +6,5 @@
   Updated routes to accurately describe the data they are fetching.  
   Added workflow to automatically update the version on the server.
 
-- v1.0.1
+- v1.0.1  
   Fixing issue with workflow on vps.
