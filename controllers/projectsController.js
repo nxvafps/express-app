@@ -13,7 +13,19 @@ export const getProjects = async (req, res) => {
 export const getCurrentProjects = async (req, res) => {
   try {
     const result = await pool.query(
-      "SELECT * FROM public.projects WHERE current_Project = 'y'"
+      "SELECT * FROM public.projects WHERE project_status = 'current'"
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error("Error fetching projects", err);
+    res.status(500).json({ error: "Server Error", details: err.message });
+  }
+};
+
+export const getPlannedProjects = async (req, res) => {
+  try {
+    const result = await pool.query(
+      "SELECT * FROM public.projects WHERE project_status = 'planned'"
     );
     res.json(result.rows);
   } catch (err) {
