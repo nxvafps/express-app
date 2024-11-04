@@ -8,3 +8,6 @@
 
 - v1.0.1  
   Fixing issue with workflow on vps.
+
+- v1.0.2  
+  Fixing a bug where planned projects route was not properly exported

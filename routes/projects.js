@@ -2,6 +2,7 @@ import express from "express";
 import {
   getProjects,
   getCurrentProjects,
+  getPlannedProjects,
 } from "../controllers/projectsController.js";
 
 const router = express.Router();
