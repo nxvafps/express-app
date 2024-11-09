@@ -8,7 +8,7 @@ export const getProjects = async (req, res) => {
     res.json(result.rows);
   } catch (err) {
     console.error("Error fetching projects", err);
-    res.status(500).json({ error: "Server Error", details: err.message });
+    res.status(500).json({ error: "Server Error" });
   }
 };
 
@@ -20,7 +20,7 @@ export const getCurrentProjects = async (req, res) => {
     res.json(result.rows);
   } catch (err) {
     console.error("Error fetching projects", err);
-    res.status(500).json({ error: "Server Error", details: err.message });
+    res.status(500).json({ error: "Server Error" });
   }
 };
 
@@ -32,6 +32,6 @@ export const getPlannedProjects = async (req, res) => {
     res.json(result.rows);
   } catch (err) {
     console.error("Error fetching projects", err);
-    res.status(500).json({ error: "Server Error", details: err.message });
+    res.status(500).json({ error: "Server Error" });
   }
 };

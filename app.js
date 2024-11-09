@@ -10,8 +10,9 @@ const port = process.env.PORT || 3000;
 
 //middlewares
 setupMiddlewares(app);
+
 //routes
-app.use("/api/projects", projectsRouter);
+app.use("/projects", projectsRouter);
 
 //start the server
 app.listen(port, () => {
