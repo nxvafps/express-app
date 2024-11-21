@@ -8,7 +8,7 @@ import {
 } from "../controllers/projectsController.js";
 
 const router = express.Router();
-router.get("/", getProjects);
+router.get("/all", getProjects);
 router.get("/current", getCurrentProjects);
 router.get("/planned", getPlannedProjects);
 router.get("/project/:id", getProjectById);

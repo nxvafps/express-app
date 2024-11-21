@@ -6,8 +6,8 @@ import {
 } from "../controllers/blogPostsController.js";
 
 const router = express.Router();
-router.get("/", getBlogPosts);
+router.get("/posts", getBlogPosts);
 router.get("/post/:id", getBlogPostById);
-router.post("/", createBlogPost);
+router.post("/posts", createBlogPost);
 
 export default router;
